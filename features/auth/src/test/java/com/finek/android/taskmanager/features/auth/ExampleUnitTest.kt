@@ -1,4 +1,4 @@
-package com.finek.android.auth
+package com.finek.android.taskmanager.features.auth
 
 import org.junit.Test
 
