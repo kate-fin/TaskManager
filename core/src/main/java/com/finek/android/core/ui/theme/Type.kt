@@ -1,4 +1,4 @@
-package com.finek.android.taskmanager.ui.theme
+package com.finek.android.core.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
