@@ -51,8 +51,9 @@ fun AppTextButton(
 
 @Preview(showBackground = true)
 @Composable
-fun AppButtonPreview() {
+private fun AppButtonPreview() {
 	TaskManagerTheme {
+
 		AppButton(onClick = {}) {
 			Text(text = "Hello Button")
 		}
@@ -61,7 +62,7 @@ fun AppButtonPreview() {
 
 @Preview(showBackground = true)
 @Composable
-fun AppTextButtonPreview() {
+private fun AppTextButtonPreview() {
 	TaskManagerTheme {
 		AppTextButton(onClick = {}) {
 			Text(text = "Hello Text Button")
