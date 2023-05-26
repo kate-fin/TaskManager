@@ -13,17 +13,20 @@ import androidx.compose.ui.unit.dp
 import com.finek.android.core.ui.components.AppTextButton
 
 @Composable
-internal fun AuthScreen() {
+internal fun MainAuthScreen(
+	onRegistryClick: () -> Unit,
+	onLogInClick: () -> Unit
+) {
 	Column(
 		modifier = Modifier.fillMaxSize().padding(bottom = 25.dp),
 		verticalArrangement = Arrangement.Bottom,
 		horizontalAlignment = Alignment.CenterHorizontally,
 	) {
-		AppTextButton(onClick = { /*TODO navigate to registry*/ }) {
+		AppTextButton(onClick = { onRegistryClick() }) {
 			Text("Registry")
 		}
 
-		AppTextButton(onClick = { /*TODO navigate to auth*/ }) {
+		AppTextButton(onClick = { onLogInClick() }) {
 			Text("Log in")
 		}
 	}
@@ -32,5 +35,5 @@ internal fun AuthScreen() {
 @Preview
 @Composable
 private fun EmptyPreview() {
-	AuthScreen()
+	MainAuthScreen({}, {})
 }
