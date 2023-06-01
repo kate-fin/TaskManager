@@ -5,6 +5,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.finek.android.taskmanager.features.auth.authGraph
 import com.finek.android.taskmanager.features.auth.authGraphRoute
+import com.finek.android.taskmanager.features.language.ui.languageGraph
+import com.finek.android.taskmanager.features.language.ui.languageGraphRoute
 
 @Composable
 fun AppNavigation(
@@ -12,8 +14,9 @@ fun AppNavigation(
 ) {
 	NavHost(
 		navController = navController,
-		startDestination = authGraphRoute,
+		startDestination = languageGraphRoute//authGraphRoute,
 	) {
 		authGraph(navController)
+		languageGraph(navController)
 	}
 }

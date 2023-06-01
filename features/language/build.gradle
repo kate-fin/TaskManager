@@ -21,6 +21,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion compose_compiler_version
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -45,9 +51,18 @@ dependencies {
     implementation "androidx.compose.ui:ui:$compose_ui_version"
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"
     implementation 'androidx.compose.material:material:1.2.0'
-    implementation "androidx.compose.runtime:runtime-livedata:$compose_ui_version"
+//    implementation "androidx.compose.runtime:runtime-livedata:$compose_ui_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
+
+    //DI
+//    implementation "org.koin:koin-core:$koin_version"
+//    implementation "org.koin:koin-core-ext:$koin_version"
+//    implementation "org.koin:koin-android:$koin_version"
+//    implementation "org.koin:koin-androidx-scope:$koin_version"
+//    implementation "org.koin:koin-androidx-ext:$koin_version"
+//    implementation "org.koin:koin-ktor:$koin_version"
+    implementation 'io.insert-koin:koin-androidx-compose:3.4.1'
 
     //Tests
     testImplementation 'junit:junit:4.13.2'

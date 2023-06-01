@@ -40,7 +40,7 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.2.0'
+        kotlinCompilerExtensionVersion compose_compiler_version
     }
     packagingOptions {
         resources {
@@ -54,9 +54,10 @@ dependencies {
     //Modules
     implementation project(":core")
     implementation project(":features:auth")
+    implementation project(":features:language")
 
     implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
+//    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
 
     //Compose
     implementation "androidx.navigation:navigation-compose:$nav_version"
@@ -69,13 +70,13 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
 
     //Architecture
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.4.0"
-    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
-
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.0"
-    implementation "com.github.hadilq.liveevent:liveevent:$live_event_version"
+//    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
+//    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
+//    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.4.0"
+//    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+//
+//    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.0"
+//    implementation "com.github.hadilq.liveevent:liveevent:$live_event_version"
 
     //Networking
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"

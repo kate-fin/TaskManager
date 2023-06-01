@@ -4,6 +4,15 @@ import com.finek.android.taskmanager.features.language.data.datasources.mock.mod
 
 object ExerciseMockData {
 	fun getExercises(): List<ExerciseMockModel> {
-		return listOf()
+		return listOf(
+			ExerciseMockModel(
+				task = "first task",
+				rightAnswer = "first answer"
+			),
+			ExerciseMockModel(
+				task = "second task",
+				rightAnswer = "second answer"
+			),
+		)
 	}
 }
