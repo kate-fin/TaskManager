@@ -3,6 +3,7 @@ package com.finek.android.taskmanager
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
+import com.finek.android.core.ui.infoScreen
 import com.finek.android.taskmanager.features.auth.authGraph
 import com.finek.android.taskmanager.features.auth.authGraphRoute
 import com.finek.android.taskmanager.features.language.ui.languageGraph
@@ -18,5 +19,6 @@ fun AppNavigation(
 	) {
 		authGraph(navController)
 		languageGraph(navController)
+		infoScreen()
 	}
 }

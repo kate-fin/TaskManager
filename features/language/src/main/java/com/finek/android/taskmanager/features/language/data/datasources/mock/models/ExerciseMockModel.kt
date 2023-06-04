@@ -1,9 +1,12 @@
 package com.finek.android.taskmanager.features.language.data.datasources.mock.models
 
-data class ExerciseMockModel(
+import com.finek.android.taskmanager.features.language.data.datasources.mock.enums.ExerciseType
+
+data class ExerciseMockModel<T>(
 	val name: String = "",
-	val lesson: LessonMockModel? = null,
+	val lesson: List<LessonMockModel> = emptyList(),
 	val grammar: List<GrammarMockModel> = emptyList(),
-	val task: String,
+	val type: ExerciseType,
+	val task: T,
 	val rightAnswer: String
 )

@@ -5,13 +5,14 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
+import com.finek.android.core.ui.navigateToInfo
 import org.koin.androidx.compose.koinViewModel
 
 
 const val languageGraphRoute = "language"
 fun NavGraphBuilder.languageGraph(navController: NavController) {
 	navigation(startDestination = exerciseRoute, route = languageGraphRoute) {
-		exerciseScreen()
+		exerciseScreen(navController)
 	}
 }
 
@@ -21,8 +22,8 @@ fun NavController.navigateToExercise(navOptions: NavOptions? = null) {
 	this.navigate(exerciseRoute, navOptions)
 }
 
-fun NavGraphBuilder.exerciseScreen() {
+fun NavGraphBuilder.exerciseScreen(navController: NavController) {
 	composable(route = exerciseRoute) {
-		ExerciseScreen()
+		ExerciseScreen(onLessonClick = { url -> navController.navigateToInfo(url) })
 	}
 }

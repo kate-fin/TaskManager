@@ -7,7 +7,8 @@ object LessonMapper {
 	fun convert(lesson: LessonMockModel): LessonModel {
 		return LessonModel(
 			name = lesson.name,
-			number = lesson.number
+			number = lesson.number,
+			docLink = lesson.docLink
 		)
 	}
 }

@@ -23,6 +23,9 @@ class ExerciseViewModel(private val exerciseUseCase: ExerciseUseCase) : ViewMode
 	private val exerciseList = _exerciseList.asStateFlow()
 	private var currentPosition by mutableStateOf(0)
 
+	private var _isRightAnswerVisible by mutableStateOf(false)
+	val isRightAnswerVisible get() = _isRightAnswerVisible
+
 	private fun getExercises() {
 		_exerciseList.value = exerciseUseCase.getRandomExercises()
 	}
@@ -34,5 +37,9 @@ class ExerciseViewModel(private val exerciseUseCase: ExerciseUseCase) : ViewMode
 		_exercise.value = exerciseList.value.getOrNull(currentPosition)
 		currentPosition += 1
 		currentPosition %= exerciseList.value.size
+	}
+
+	fun changeRightAnswerVisibility(isVisible:Boolean = !_isRightAnswerVisible) {
+		_isRightAnswerVisible = isVisible
 	}
 }
