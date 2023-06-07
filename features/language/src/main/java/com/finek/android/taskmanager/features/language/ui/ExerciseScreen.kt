@@ -1,10 +1,8 @@
 package com.finek.android.taskmanager.features.language.ui
 
 import androidx.compose.runtime.*
-import androidx.compose.ui.platform.LocalLifecycleOwner
-import androidx.lifecycle.LifecycleOwner
 import com.finek.android.taskmanager.features.language.domain.models.ExerciseDateModel
-import com.finek.android.taskmanager.features.language.domain.models.ExerciseWritingModel
+import com.finek.android.taskmanager.features.language.domain.models.ExercisePhraseModel
 import com.finek.android.taskmanager.features.language.ui.exercises.ExerciseDateCard
 import com.finek.android.taskmanager.features.language.ui.exercises.ExerciseWritingCard
 import com.finek.android.taskmanager.features.language.viewmodel.ExerciseViewModel
@@ -20,9 +18,9 @@ internal fun ExerciseScreen(
 	}
 	val exercise by viewModel.exercise.collectAsState()
 	when(exercise) {
-		is ExerciseWritingModel -> {
+		is ExercisePhraseModel -> {
 			ExerciseWritingCard(
-				exercise = exercise as ExerciseWritingModel,
+				exercise = exercise as ExercisePhraseModel,
 				isRightAnswerVisible = viewModel.isRightAnswerVisible,
 				onShowAnswerClick = { viewModel.changeRightAnswerVisibility() },
 				onNextCardClick = {

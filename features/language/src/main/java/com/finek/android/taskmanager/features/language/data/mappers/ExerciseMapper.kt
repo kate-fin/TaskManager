@@ -16,7 +16,7 @@ object ExerciseMapper {
 				)
 			}
 			else -> {
-				ExerciseWritingModel(
+				ExercisePhraseModel(
 					lessons = exercise.lesson.map { LessonMapper.convert(it) },
 					grammars = exercise.grammar.map { GrammarMapper.convert(it) },
 					task = exercise.task.toString(),

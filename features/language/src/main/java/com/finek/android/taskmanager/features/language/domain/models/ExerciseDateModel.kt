@@ -8,6 +8,6 @@ class ExerciseDateModel(
 	override val grammars: List<GrammarModel>,
 	val task: Date,
 	val hint: String,
-) : ExerciseModel(exerciseType = ExerciseType.WRITING) {
+) : ExerciseModel(possibleExerciseTypes = listOf(ExerciseType.READING, ExerciseType.SPEAKING)) {
 
 }

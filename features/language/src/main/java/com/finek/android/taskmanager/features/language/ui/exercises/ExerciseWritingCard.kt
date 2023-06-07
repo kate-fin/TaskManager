@@ -12,11 +12,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.finek.android.core.ui.components.AppTextButton
-import com.finek.android.taskmanager.features.language.domain.models.ExerciseWritingModel
+import com.finek.android.taskmanager.features.language.domain.models.ExercisePhraseModel
 
 @Composable
 internal fun ExerciseWritingCard(
-	exercise: ExerciseWritingModel,
+	exercise: ExercisePhraseModel,
 	isRightAnswerVisible: Boolean,
 	onShowAnswerClick: () -> Unit,
 	onNextCardClick: () -> Unit,
@@ -49,7 +49,7 @@ internal fun ExerciseWritingCard(
 @Composable
 private fun EmptyPreview() {
 	ExerciseWritingCard(
-		exercise = ExerciseWritingModel(
+		exercise = ExercisePhraseModel(
 			lessons = emptyList(),
 			grammars = emptyList(),
 			task = "this is your task",
