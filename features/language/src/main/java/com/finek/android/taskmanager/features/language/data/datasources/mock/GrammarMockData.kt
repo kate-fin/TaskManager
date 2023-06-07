@@ -7,6 +7,10 @@ object GrammarMockData {
 		return emptyList()
 	}
 
+	fun numbersGrammar() = GrammarMockModel(
+		name = "numbers grammar",
+		rule = ""
+	)
 	fun dateGrammar() = GrammarMockModel(
 		name = "date grammar",
 		rule = ""
