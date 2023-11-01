@@ -1,5 +1,6 @@
 package com.finek.android.taskmanager.features.language.ui.exercises
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -8,9 +9,11 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.finek.android.core.ui.components.AppTextButton
+import com.finek.android.taskmanager.features.language.R
 import com.finek.android.taskmanager.features.language.domain.models.ExerciseDateModel
 import com.finek.android.taskmanager.features.language.domain.models.LessonModel
 import com.finek.android.taskmanager.features.language.ui.components.LessonCard
@@ -37,16 +40,23 @@ internal fun ExerciseDateCard(
 		}
 		if (isRightAnswerVisible) {
 			Card() {
-				Column() {
+				Column(
+					horizontalAlignment = Alignment.CenterHorizontally
+				) {
+					Image(
+						modifier = Modifier.padding(5.dp),
+						painter = painterResource(id = R.drawable.hint_korean_date),
+						contentDescription = null
+					)
 					Text(exercise.hint)
-					LazyColumn() {
-						itemsIndexed(exercise.lessons) { ind, lesson ->
-							LessonCard(
-								lessonModel = lesson,
-								onLessonClick = onLessonClick
-							)
-						}
-					}
+//					LazyColumn() {
+//						itemsIndexed(exercise.lessons) { ind, lesson ->
+//							LessonCard(
+//								lessonModel = lesson,
+//								onLessonClick = onLessonClick
+//							)
+//						}
+//					}
 				}
 			}
 		}

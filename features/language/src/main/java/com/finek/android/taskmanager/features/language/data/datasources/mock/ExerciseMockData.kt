@@ -5,7 +5,7 @@ import com.finek.android.taskmanager.features.language.data.datasources.mock.mod
 import java.util.*
 
 object ExerciseMockData {
-	fun getExercises() = datesExercises() + phraseExercises()
+	fun getExercises() = datesExercises() //+ phraseExercises()
 	private fun phraseExercises() = listOf(
 		ExerciseMockModel(
 			lesson = listOf(LessonMockData.getLesson(7)),
